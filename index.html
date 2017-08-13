@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Effect</title>
+
+
+	<style>
+		canvas{
+			/*border: 1px solid #000;*/
+			position: fixed;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+		body{
+			margin:0;
+			background-color: #000;
+		}
+		div{
+			height: 100px;
+			width: 30%;
+			background-color:transparent;
+			margin-left: 45%;
+			margin-top: 5%;
+		}
+		h1{
+			color:#0ff;
+			text-shadow:0 0 30px #0ff;
+			text-align: center;
+		}
+
+		ul{
+			margin: 0;
+			padding: 0;
+			display: flex;
+		}
+		ul li{
+			list-style: none;
+			color: #fff; 
+			font-size: 60px;
+			font-weight: bold;
+			letter-spacing: 10px;
+			filter: blur(1px);
+		}
+
+		ul:hover li {
+
+			animation:animate 2s linear forwards;
+		}
+
+		@keyframes animate {
+			0%{
+				transform: rotate(0deg) translateY(0px);
+				opacity: 1;
+				filter: blur(1px);
+			}
+			to{
+				opacity: 0;
+			}
+			100%{
+				transform: rotate(45deg) translateY(-200px);
+				opacity: 0;
+				filter: blur(20px);
+			}
+			to{
+				opacity: 0;
+			}
+		}
+
+
+		ul li:nth-child(1){
+			animation-delay: 0.4s;
+		}
+
+		ul li:nth-child(2){
+			animation-delay: 0.8s;
+		}
+
+		ul li:nth-child(3){
+			animation-delay: 1.2s;
+		}
+
+		ul li:nth-child(4){
+			animation-delay: 1.6s;
+		}
+
+		ul li:nth-child(5){
+			animation-delay: 2.0s;
+		}
+
+		.content{
+			top:50%;
+			width: 20%;
+			height: 40%;
+			background-color:#000;
+			box-sizing:border-box;
+			padding: 15px;
+			transition: 0.5s;
+			overflow: hidden; }
+
+			.content p{
+				margin: 0;
+				padding: 0;
+				color:#fff;
+				font-size: 25px;
+				transition: .5s;
+				transition-delay: .5s;
+				transform: scale(.8);
+
+			}
+
+			.content:before{
+				content: '';
+				position: absolute;
+				width: 0%;
+				height: 0%;
+				top:0;
+				left: 0;
+				border-top: 2px solid #fff;
+				border-left: 2px solid #fff;
+				opacity: 0;
+				transition: .5s;
+				box-sizing:border-box;
+
+			}
+
+			.content:after{
+				content: '';
+				position: absolute;
+				width: 0%;
+				height: 0%;
+				bottom:0;
+				right: 0;
+				border-bottom: 2px solid #fff;
+				border-right: 2px solid #fff;
+				opacity: 0;
+				transition: .5s;
+				box-sizing:border-box;
+			}
+
+			.content:hover:before{
+				width: 50%;
+				height: 50%;
+				opacity: 1;
+
+			}
+			.content:hover:after{
+				width: 50%;
+				height: 50%;
+				opacity: 1;
+
+			}
+			.content:hover p{
+				transform: scale(1);
+			}
+
+
+		</style>
+	</head>
+	<body>
+
+		<canvas></canvas> <h1>WELCOME</h1> <div> <ul> <li>S</li> <li>M</li> <li>O</li> <li>K</li> <li>E</li> </ul> </div>
+		<div class="content">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			</div>
+
+
+			<script src="canvas.js "></script>
+		</body>
+		</html>
